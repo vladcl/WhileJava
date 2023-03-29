@@ -1,18 +1,26 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        int totalCars = 10;
-
         Scanner scanner = new Scanner(System.in);
 
-        while(totalCars > 0) {
-            String carName = scanner.nextLine();
-            int carYear = scanner.nextInt();
+        char wantsToContinue = 'y';
 
-            System.out.println("A marca do seu carro é: " + carName
-            + ", e o ano de fabricação é: " + carYear);
+        while(wantsToContinue == 'y' || wantsToContinue == 'Y'){
+            System.out.println("Digite um número: ");
+            int number = scanner.nextInt();
 
-            totalCars = totalCars - 1;
+            if(number == 0){
+                System.out.println("O número é 0");
+            } else {
+                if(number > 0) {
+                    System.out.println("O número é maior que zero");
+                } else {
+                    System.out.println("O número é menor que zero");
+                }
+            }
+            System.out.println("Deseja continuar a checagem? Y - Sim/N - Não");
+            wantsToContinue = scanner.next().charAt(0);
         }
+
     }
 }
